@@ -1,6 +1,4 @@
 
-// const url = `/v2/projects/${projectID}/projects_users?filter[campus]=${campus.id}&page[size]=100`
-
 require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const OAuth2 = require('oauth').OAuth2;
@@ -11,6 +9,8 @@ const app = express();
 const port = 3000;
 // 
 
+
+var nodemailer = require('nodemailer');
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
 const redURI = process.env.RED_URI;
@@ -33,6 +33,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -41,6 +42,10 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+
+
+
 
 // /me route
 app.get('/me', async (req, res) => {
