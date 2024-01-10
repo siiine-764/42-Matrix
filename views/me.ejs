@@ -6,15 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KNOX</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
 </head>
 
 <body class="h-screen">
-  <nav class="navbar fixed-top bg-body-tertiary" style="background-color: rgb(253, 1, 1);">
-    <div class="container-fluid">
-      <img class="rounded w-96 border border-black" src="<%= data.image.link %>" alt="profile-image" style="width: 25px;">
-
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        </a>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+            <p class="text-sm  text-gray-500 dark:text-white">Number phone: <%= data.phone %></p>
+            <a href="./" class="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login out</a>
+            <img src="<%= data.image.link %>"  alt="image user" width="30px">
+        </div>
     </div>
-  </nav>
+</nav>
+<nav class="bg-gray-50 dark:bg-gray-700">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+        <div class="flex items-center">
+            <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                <li>
+                    <a href="https://profile.intra.42.fr/" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Intra</a>
+                </li>
+                <li>
+                    <a href="https://bus-med.1337.ma/" class="text-gray-900 dark:text-white hover:underline">TIXISTA</a>
+                </li>
+                <li>
+                    <a href="https://logtime-med.1337.ma/" class="text-gray-900 dark:text-white hover:underline">LogTime</a>
+                </li>
+                <li>
+                    <a href="https://github-portal.42.fr/" class="text-gray-900 dark:text-white hover:underline">Github Portal</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
   <div class="w-full flex justify-center items-center h-full">
@@ -44,6 +72,8 @@
         </div>
     </div>
 </div>
-
+<p class="font-mono text-gray-800">-- <%= data.id %>...</p>
+<p class="font-mono text-gray-800">-- <%= data.campus_id%>...</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 </html>
