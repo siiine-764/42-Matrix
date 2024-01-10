@@ -39,9 +39,9 @@ app.use(express.static('public'));
 
 // ------------------------------------------------------------------------------------------------------
 // / route
-// app.get('/', (req, res) => {
-//     res.render('index');
-// });
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 app.get('/gallery', (req, res) => {
     res.render('gallery');
@@ -67,56 +67,56 @@ app.get('/dachboard', async (req, res) => {
 });
 
 // /me route
-// app.get('/me', async (req, res) => {
-//     const accessToken = req.session.accessToken;
-//     try {
-//         // Use the access token to make a request to the API
-//         const { data } = await axios.get(`${baseSite}/v2/me`, {
-//             headers: {
-//                 Authorization: `Bearer ${accessToken}`,
-//             },
-//         });
-//         // Respond with the API data
-//         res.render('me', { data: data });
-//     } catch (error) {
-//         console.error('Error fetching data from the API:', error.message);
-//         res.redirect('/');
-//     }
-// });
+app.get('/me', async (req, res) => {
+    const accessToken = req.session.accessToken;
+    try {
+        // Use the access token to make a request to the API
+        const { data } = await axios.get(`${baseSite}/v2/me`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+        // Respond with the API data
+        res.render('me', { data: data });
+    } catch (error) {
+        console.error('Error fetching data from the API:', error.message);
+        res.redirect('/');
+    }
+});
 
 
 // /42 route
-// app.get('/42', (req, res) => {
-//     let oauthURI = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redURI}&response_type=code`;
-//     res.redirect(oauthURI);
-// });
+app.get('/42', (req, res) => {
+    let oauthURI = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redURI}&response_type=code`;
+    res.redirect(oauthURI);
+});
 
-// app.get('/RedirectURI', (req, res) => {
-//     const { code } = req.query;
-//     if (code == undefined) {
-//         res.redirect('/');
-//         return;
-//     }
-//     // Exchange the code for an access token
-//     oauth2.getOAuthAccessToken(
-//         code,
-//         { grant_type: 'authorization_code', redirect_uri: redURI },
-//         (err, accessToken, refreshToken, params) => {
-//             if (err) {
-//                 return res.status(500).json({ error: 'Error getting access token', details: err });
-//             }
-//             req.session.accessToken = accessToken;
-//             res.redirect('/me');
-//         }
-//     );
-// });
+app.get('/RedirectURI', (req, res) => {
+    const { code } = req.query;
+    if (code == undefined) {
+        res.redirect('/');
+        return;
+    }
+    // Exchange the code for an access token
+    oauth2.getOAuthAccessToken(
+        code,
+        { grant_type: 'authorization_code', redirect_uri: redURI },
+        (err, accessToken, refreshToken, params) => {
+            if (err) {
+                return res.status(500).json({ error: 'Error getting access token', details: err });
+            }
+            req.session.accessToken = accessToken;
+            res.redirect('/me');
+        }
+    );
+});
 // ------------------------------------------------------------------------------------------------------
 
 // ------------------------------------------------------------------------------------------------------
 // rest of routes
-// app.get('/*', (req, res) => {
-//     res.redirect('/');
-// });
+app.get('/*', (req, res) => {
+    res.redirect('/');
+});
 // ------------------------------------------------------------------------------------------------------
 
 
