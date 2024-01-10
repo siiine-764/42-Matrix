@@ -4,46 +4,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KNOX</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+        background: url('/images/Culture_Matrix_RedPillBluePill-1047403844.webp') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .container {
+      z-index: 2; 
+      display: flex;
+    }
+
+    .container .dv {
+      width: 10rem; 
+      height: 10rem;
+    }
+    #d1{
+      position: absolute;
+top: 85%;
+left: 65%;
+transform: translate(-50%, -50%);
+    }
+    #d2{
+      position: absolute;
+top: 85%;
+left: 35%;
+transform: translate(-50%, -50%);
+
+    }
+  </style>
 </head>
 
-<body class="h-screen">
-  <nav class="navbar fixed-top bg-body-tertiary" style="background-color: rgb(253, 1, 1);">
-    <div class="container-fluid">
-      <img class="rounded w-96 border border-black" src="<%= data.image.link %>" alt="profile-image" style="width: 25px;">
+<body >
+  <header style="background-color: rgba(238, 130, 238, 0); padding: 20px;">
+  <button id="playPauseButton">Play/Pause</button>
+
+  </header>
+
+  <p class="text-sm  text-gray-500 dark:text-white">Welcome in My Matrix <%= data.login %></p>
+  <div class="container" id="playButton">
+    <div style="background-color: rgba(240, 248, 255, 0) ; width: 90rem; height: 40rem;">
 
     </div>
-  </nav>
+    <a href="gallery">
+      <div style="background-color: violet; " class="dv" id="d1"></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=auLopgsgJ_s">
+      <div style="background-color:tomato;" class="dv"  id="d2"></div>
+    </a>
+  </div>
 
-
-  <div class="w-full flex justify-center items-center h-full">
-    
-
-
-    <div class="p-4 border border-black rounded shadow-xl">
-        <a href="./" class="flex hover:underline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg>
-            <div class="flex px-1"></div>
-            <span class="font-mono text-gray-800"><%= data.login %></span>
-        </a>
-        <div class="flex py-2"></div><hr><div class="flex py-2"></div>
-        <img class="rounded w-96 border border-black" src="<%= data.image.link %>" alt="profile-image">
-        <div class="flex py-2"></div><hr><div class="flex py-2"></div>
-        <div class="text-sm">
-            <% Object.entries(data).forEach(([key, value]) => { %>
-                <div>
-                  
-                <% if (key != 'anonymize_date' && key != 'data_erasure_date') { %>
-                    <% if (typeof value === 'string') { %>
-                      <p class="font-mono"><strong class=""><%= key %>:</strong> <%= value %></p>
-                    <% } %>
-                <% } %>
-                </div>
-            <% }); %>
-        </div>
-    </div>
-</div>
-
+  <audio id="player" style="display:none;">
+    <!-- Sources inserted with JavaScript -->
+  </audio>
 </body>
+
+<script>
+  window.onload = function() {
+    var audioElement = document.createElement('audio');
+    audioElement.controls = true;
+    audioElement.muted = false;
+    audioElement.autoplay = true;
+
+    var musicFiles = ["audio/honor-and-sword-main-11222.mp3", "audio/honor-and-sword-main-11222.mp3", "audio/honor-and-sword-main-11222.mp3"]; // replace with your music files
+    var randomMusicFile = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+
+    var sourceElement = document.createElement('source');
+    sourceElement.src = randomMusicFile;
+    sourceElement.type = "audio/mpeg";
+
+    audioElement.appendChild(sourceElement);
+
+document.getElementById('playPauseButton').addEventListener('click', function() {
+  if (audioElement.paused) {
+    audioElement.play();
+  } else {
+    audioElement.pause();
+  }
+});
+
+document.getElementById('playButton').addEventListener('click', function() {
+  if (audioElement.paused) {
+    audioElement.play();
+  }
+});
+  }
+</script>
 </html>
