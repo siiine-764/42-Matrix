@@ -47,6 +47,10 @@ app.get('/gallery', (req, res) => {
     res.render('gallery');
 });
 
+app.get('/redpill', (req, res) => {
+    res.render('redpill');
+});
+
 
 // /dachboard route
 app.get('/dachboard', async (req, res) => {

@@ -15,9 +15,7 @@ body{background:#333;margin:0;padding:0}
     overflow: hidden;
     cursor: pointer;
     left: 100%;
-    border-color: #1500ff;
-    border-style: solid;
-    border-width: 1px;
+    border: none;
 }
 .example span {
     position: absolute;
@@ -27,8 +25,8 @@ body{background:#333;margin:0;padding:0}
     white-space: nowrap;
     left: -999px;
     background: #333;
-    /*filter: alpha(opacity=70);
-    opacity: 0.7;*/
+    filter: alpha(opacity=70);
+    opacity: 0.7;
     background: rgba(0, 0, 0, 0.7);
 }
 
