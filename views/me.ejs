@@ -90,28 +90,25 @@ transform: translate(-50%, -50%);
 }
 
 
-.welcome {
-  top: 0;
-  width: 100%;
+.glow {
+  position: absolute;
+  width: 95%;
+  top: 12rem;
+  font-size: 80px;
+  font-weight: 1000;
+  color: #fff;
   text-align: center;
-  float: left;
-  color: yellow;
-  font-size: 3rem;
+  animation: glow 1s ease-in-out infinite alternate;
 }
-.container2 {
-  width: 50%;
-  float: left;
-}
-.retxt {
-  text-transform: uppercase;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  float: left;
-  color: yellow;
-  font-size: 3rem;
-  margin: 0;
-  padding: 0;
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
 
   </style>
@@ -119,7 +116,7 @@ transform: translate(-50%, -50%);
 
 <body >
 
-    <h1 class='retxt'>Welcome to Matrix <br/> <%= data.login %></h1>
+    <h1 class="glow">Welcome to Matrix <br/> <%= data.login %></h1>
 
   <div class="container" id="playButton">
     <div style="background-color: rgba(240, 248, 255, 0) ; width: 90rem; height: 40rem;">
