@@ -10,138 +10,206 @@
     html {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     body {
-        background: url('/images/Culture_Matrix_RedPillBluePill-1047403844.webp') no-repeat center center fixed;
+      background: url('/images/Culture_Matrix_RedPillBluePill-1047403844.webp') no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
+
     .container {
-      z-index: 2; 
+      z-index: 2;
       display: flex;
     }
 
     .container .dv {
-      width: 15rem; 
+      width: 15rem;
       height: 15rem;
     }
-    #d1{
+
+    #d1 {
       position: absolute;
-top: 85%;
-left: 70%;
-transform: translate(-50%, -50%);
+      top: 85%;
+
+      left: 64%;
+
+      transform: translate(-50%, -50%);
     }
-    #d2{
+
+    #d2 {
       position: absolute;
-top: 85%;
-left: 30%;
-transform: translate(-50%, -50%);
+      top: 85%;
+      left: 35%;
+      transform: translate(-50%, -50%);
 
     }
 
     /* bottom */
 
     :root {
-  --black: rgba(0, 0, 0, 0.2);
-}
+      --black: rgba(0, 0, 0, 0.2);
+    }
 
-.btn {
-  background-color: #fff;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px 0 var(--black), inset 0 -4px 0 var(--black);
-  color: black !important;
-  cursor: pointer;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
-  margin-bottom: 0;
-  margin-right: 0;
-  max-height: inherit;
-  padding: 8px 10px 10px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition-duration: 100ms;
-  -o-transition-duration: 100ms;
-  -webkit-transition-duration: 100ms;
-  transition-property: background, color;
-  -o-transition-property: background, color;
-  -webkit-transition-property: background, color;
-  transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  width: auto; /* 100% causes the button to be the width of the container */
-}
+    .btn {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 1000px;
+      background-color: #fff;
+      border: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 var(--black), inset 0 -4px 0 var(--black);
+      color: black !important;
+      cursor: pointer;
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 0;
+      margin-right: 0;
+      max-height: inherit;
+      padding: 8px 10px 10px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      transition-duration: 100ms;
+      -o-transition-duration: 100ms;
+      -webkit-transition-duration: 100ms;
+      transition-property: background, color;
+      -o-transition-property: background, color;
+      -webkit-transition-property: background, color;
+      transition-timing-function: ease-in-out;
+      -o-transition-timing-function: ease-in-out;
+      -webkit-transition-timing-function: ease-in-out;
+      width: auto;
+      /* 100% causes the button to be the width of the container */
+    }
 
-.btn:focus,
-.btn:hover {
-  background-color: #dddada;
-  text-decoration: none;
-}
+    .btn:focus,
+    .btn:hover {
+      background-color: #dddada;
+      text-decoration: none;
+    }
 
 
-.glow {
-  position: absolute;
-  width: 95%;
-  top: 12rem;
-  font-size: 80px;
-  font-weight: 1000;
-  color: #fff;
-  text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
-}
+    .glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: flex;
+      /* align-items: center; */
+      justify-content: center;
+      text-align: center;
+      /* width: 100%; */
+      /* top: 50%;
+      left: 50%;
+      position: relative;
+      top: 12rem;
+      text-align: center;*/
+      animation: glow 1s ease-in-out infinite alternate;
+      transform: translate(-50%, -50%);
+      font-weight: 600;
+      font-size: 80px;
+      color: #fff;
+    }
+    
+    @media only screen and (max-width: 1590px) {
+      #d1 {
+      top: 75%;
+      left: 70%;
 
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-}
+    }
 
+    #d2 {
+      top: 75%;
+      left: 30%;
+    }
+    }
+    @media only screen and (max-width: 600px) {
+      .glow {
+        font-size: 50px;
+        width: 30%;
+
+      }
+      #d1 {
+      top: 75%;
+
+      left: 77%;
+
+    }
+
+    #d2 {
+      top: 75%;
+      left: 10%;
+    }
+    }
+
+    @media only screen and (max-width: 430px) {
+      .glow {
+        font-size: 40px;
+        width: 10%;
+
+      }
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ebf2e, 0 0 40px #00e632, 0 0 50px #00e61f, 0 0 60px #0fe600, 0 0 70px #00e613;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #4dff5c, 0 0 40px #4dff50, 0 0 50px #4dff62, 0 0 60px #4dff4d, 0 0 70px #4dff53, 0 0 80px #4dff62;
+      }
+    }
   </style>
 </head>
 
-<body >
+<body>
 
-    <h1 class="glow">Welcome to Matrix <br/> <%= data.login %></h1>
+  <h1 class="glow">Welcome to Matrix <br />
+    <%= data.login %>
+  </h1>
 
-  <div class="container" id="playButton">
-    <div style="background-color: rgba(240, 248, 255, 0) ; width: 90rem; height: 40rem;">
+  <div class="container" style="width: 100%; height: 100%; position: absolute; margin: 0; transform: translate(-50%, -50%); padding: 0; background-color: #00e61300; z-index: 2;" id="playButton">
+  </div>
+  <div class="container">
 
-    </div>
     <a href="gallery">
-      <div style="background-color: rgba(238, 130, 238, 0); " class="dv" id="d1"></div>
+      <div style="background-color: rgba(238, 130, 238, 0); z-index: 100; " class="dv" id="d1"></div>
     </a>
     <a href="redpill">
-      <div style="background-color:rgba(255, 99, 71, 0);" class="dv"  id="d2"></div>
+      <div style="background-color:rgba(255, 99, 71, 0); z-index: 100;" class="dv" id="d2"></div>
     </a>
   </div>
-
-  <audio id="player" style="display:none;">
-    <!-- Sources inserted with JavaScript -->
-  </audio>
-
-  <header style="background-color: rgba(238, 130, 238, 0); padding: 20px;">
+      
+      
+      <audio id="player" style="display:none;">
+        <!-- Sources inserted with JavaScript -->
+      </audio>
+      
+      <!-- <header id="playButton" style="background-color: rgba(221, 32, 221, 0.82); margin: 0; padding: 0;">
+        <p>dfd</p>
+      </header> -->
     <button id="playPauseButton" class="btn">Play/Pause</button>
-  
-    </header>
-</body>
+    
+    <div style="bottom:0; left: 0; position:fixed; z-index: 5; padding: 30px;">
+      <h4>
+      <a target="_blank" href="https://www.youtube.com/watch?v=auLopgsgJ_s" style=" font-size: 30px; border: 0px; text-decoration: none; color: #fff;">Who's mayache?</a>
+      </h4>
+    </div>
+  </body>
 
 <script>
-  window.onload = function() {
+  window.onload = function () {
     var audioElement = document.createElement('audio');
     audioElement.controls = true;
     audioElement.muted = false;
@@ -156,20 +224,23 @@ transform: translate(-50%, -50%);
 
     audioElement.appendChild(sourceElement);
 
-document.getElementById('playPauseButton').addEventListener('click', function() {
-  if (audioElement.paused) {
-    audioElement.play();
-  } else {
-    audioElement.pause();
-  }
-});
-
-document.getElementById('playButton').addEventListener('click', function() {
-  if (audioElement.paused) {
-    audioElement.play();
-  }
-});
+    document.getElementById('playPauseButton').addEventListener('click', function () {
+      if (audioElement.paused) {
+        audioElement.play();
+      }
+      else if (!audioElement.paused) {
+        audioElement.pause();
+      }
+    });
+    
+    document.getElementById('playButton').addEventListener('click', function () {
+      console.log("click",audioElement.paused)
+      if (audioElement.paused) {
+        audioElement.play();
+      }
+    });
   }
 
 </script>
+
 </html>
