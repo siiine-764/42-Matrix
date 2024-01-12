@@ -9,8 +9,6 @@ const app = express();
 const port = 3000;
 // 
 
-const serverless = require("serverless-http");
-
 var nodemailer = require('nodemailer');
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
@@ -150,7 +148,4 @@ try {
 } catch (error) {
     console.log(`App: ${error}`);
 }    
-
-
-module.exports.handler = serverless(app);
 
