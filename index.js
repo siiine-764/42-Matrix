@@ -32,30 +32,12 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-const path = require('path');
-
-// Set the path to your HTML files
-const viewsPath = path.join(__dirname, 'index');
-
-// Set the views path
-app.use(express.static(viewsPath));
-
-// Define a route to render your HTML file
-app.get('/', (req, res) => {
-    // Specify the path to your HTML file
-    const htmlFilePath = path.join(viewsPath, 'index.html');
-  
-    // Send the HTML file
-    res.sendFile(htmlFilePath);
-  });
-  
-
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // ------------------------------------------------------------------------------------------------------
 // / route
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
